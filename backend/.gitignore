@@ -1,0 +1,18 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# VS Code specific
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+
+# Maven
+target/
+
+# Environment variables
+.env

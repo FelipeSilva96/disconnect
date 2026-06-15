@@ -1,0 +1,54 @@
+.map {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+
+/* Airbnb-style pill marker (injected via L.divIcon) */
+.pin {
+  display: inline-block;
+  transform: translate(-50%, -100%);
+  padding: 6px 12px;
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  white-space: nowrap;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.pin:hover {
+  transform: translate(-50%, -100%) scale(1.08);
+  z-index: 10;
+}
+
+.userPin {
+  composes: pin;
+  background: var(--color-info);
+  color: var(--color-white);
+  border: none;
+}
+
+.popupLink {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.popupLink strong {
+  font-size: var(--font-size-base);
+}
+
+.popupLink span {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}

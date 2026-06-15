@@ -1,0 +1,1 @@
+Aqui é bem simples guys, serve para filtrar o que a gente envia ou recebe da API. Às vezes não queremos mostrar a senha do usuário ou o ID interno, então criamos um DTO só com o que é necessário. É um "pacotinho" de dados customizado.

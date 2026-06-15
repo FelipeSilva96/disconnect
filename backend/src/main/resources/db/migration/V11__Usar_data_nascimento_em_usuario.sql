@@ -1,0 +1,5 @@
+ALTER TABLE Usuario
+ADD COLUMN IF NOT EXISTS Data_nascimento date;
+
+ALTER TABLE Usuario
+DROP COLUMN IF EXISTS Idade;

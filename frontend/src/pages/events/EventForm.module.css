@@ -1,0 +1,433 @@
+/* ========== Event Form (create / edit) ========== */
+
+.page {
+  padding: var(--space-4) 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: var(--space-6);
+  transition: color var(--transition-fast);
+}
+
+.backBtn:hover {
+  color: var(--color-text-secondary);
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  margin-bottom: var(--space-6);
+}
+
+/* Card wrapper */
+.form {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+}
+
+.formGroup {
+  margin-bottom: var(--space-5);
+}
+
+.formLabel {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.formControl {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.formControl:focus {
+  outline: none;
+  border-color: var(--color-accent-dark);
+  box-shadow: var(--focus-ring);
+}
+
+.formControl:disabled {
+  background: var(--color-bg);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+textarea.formControl {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formText {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* react-datepicker: make the wrapper and input fill the column like .formControl */
+.datePickerWrapper {
+  display: block;
+  width: 100%;
+}
+
+.datePickerWrapper :global(.react-datepicker__input-container) {
+  display: block;
+  width: 100%;
+}
+
+:global(.react-datepicker__day--selected),
+:global(.react-datepicker__time-list-item--selected) {
+  background-color: var(--color-accent-dark) !important;
+  color: var(--color-primary) !important;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.column {
+  min-width: 0;
+}
+
+.imageUploadContainer {
+  width: 100%;
+}
+
+.hiddenInput,
+.hiddenCheckbox {
+  display: none;
+}
+
+.imagePreview {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+  background: var(--color-bg);
+  overflow: hidden;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  padding: var(--space-4);
+}
+
+.imagePreview:hover {
+  border-color: var(--color-accent-dark);
+  background: var(--color-bg-card);
+}
+
+.imagePreview:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.imagePreviewHasImage {
+  border-style: solid;
+  border-color: var(--color-success);
+}
+
+.imagePreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageIcon {
+  font-size: 48px;
+}
+
+.daysSelector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: var(--space-2);
+}
+
+.dayCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+  background: var(--color-bg);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  user-select: none;
+}
+
+.dayCheckbox:hover {
+  border-color: var(--color-accent-dark);
+}
+
+.dayCheckboxChecked {
+  background: var(--color-accent);
+  border-color: var(--color-accent-dark);
+  color: var(--color-primary);
+}
+
+.submitButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  margin-top: var(--space-6);
+}
+
+.submitButton:hover {
+  background: var(--color-primary-hover);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* AI draft box */
+.aiBox {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.aiHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.aiIcon {
+  font-size: 28px;
+  color: var(--color-accent-dark);
+}
+
+.aiTitle {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.aiText {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.aiTextarea {
+  width: 100%;
+  min-height: 96px;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  resize: vertical;
+}
+
+.aiTextarea:focus {
+  outline: none;
+  border-color: var(--color-accent-dark);
+  box-shadow: var(--focus-ring);
+}
+
+.aiActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.aiCancelButton {
+  width: 100%;
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-text-secondary);
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.aiCancelButton:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-secondary);
+}
+
+.aiCancelButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.aiButton {
+  margin-top: var(--space-3);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.aiButton:hover {
+  background: var(--color-primary-hover);
+}
+
+.aiButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Toast */
+.toastContainer {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 1050;
+}
+
+.toast {
+  min-width: 280px;
+  max-width: 360px;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.toastHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.toastTitle {
+  flex: 1;
+  font-size: var(--font-size-sm);
+}
+
+.toastIcon {
+  font-size: 20px;
+}
+
+.toastIconSuccess {
+  color: var(--color-success);
+}
+
+.toastIconError {
+  color: var(--color-danger);
+}
+
+.toastIconWarning {
+  color: var(--color-warning);
+}
+
+.toastClose {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.toastBody {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+@media (max-width: 767px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .imagePreview {
+    height: 250px;
+  }
+
+  .daysSelector {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}

@@ -1,0 +1,1 @@
+Aqui ficam as nossas entidades principais que representam as tabelas do banco de dados  Elas definem como os dados são salvos "de verdade", então tipo se tem uma tabela Usuario no BD, então vai ter um arquivo Usuario.java aqui

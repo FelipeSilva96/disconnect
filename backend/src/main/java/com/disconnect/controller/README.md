@@ -1,0 +1,1 @@
+Galera, essa pasta é onde o front end fala com nossa API. Aqui só tem rotas (endpoints). O controller recebe a requisição do front e chama o 'service', depois na volta, devolve a resposta pro front

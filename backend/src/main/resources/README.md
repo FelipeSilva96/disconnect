@@ -1,0 +1,3 @@
+Bruno, como as migrations não estavam em "produção", só local, e eu mudei algumas coisas no disconnect.sql, eu decidi apagar as migrations e assim consegui dividir as tarefas meio a meio com você. Então criei uma migration com a primeira parte (Tabelas e Chaves Primárias). Ai vc cria a segunda parte do documento disconnect.sql que deve ser algo tipo V2__Criar_fks.sql com todos os ALTER TABLE ... ADD CONSTRAINT fk_...etc
+
+Obs: eu apaguei as migrations pq o esboço "disconnect.sql" tinha uns ajustes a fazer, agora acho que tá 100% ok então não vamos apagar mais migrations

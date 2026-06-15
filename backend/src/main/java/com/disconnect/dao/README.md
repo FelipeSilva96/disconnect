@@ -1,0 +1,1 @@
+Aqui é a camada que fala com o banco de dados (Brunão references =D ). Aqui ficam funções tipo salvar(), deletar() buscar() no banco.

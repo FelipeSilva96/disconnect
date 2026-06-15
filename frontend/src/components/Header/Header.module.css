@@ -1,0 +1,247 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.logoLink {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.logoLink:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  font-size: var(--font-size-2xl);
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+.logoBold {
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
+.searchSlot {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Right side: create button + user menu */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.createBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.createBtn:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent-dark);
+}
+
+.createBtn .material-symbols-outlined {
+  font-size: 20px;
+}
+
+/* User Menu */
+.userMenu {
+  position: relative;
+}
+
+.userMenuToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  transition: all var(--transition-fast);
+}
+
+.userMenuToggle:hover {
+  background-color: var(--color-bg);
+  border-color: var(--color-text-muted);
+}
+
+.userIcon {
+  color: var(--color-text-secondary);
+}
+
+.userName {
+  font-weight: 500;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevronIcon {
+  color: var(--color-text-secondary);
+  transition: transform var(--transition-fast);
+}
+
+.userMenuToggle:hover .chevronIcon {
+  transform: translateY(2px);
+}
+
+/* Dropdown */
+.userDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  padding: var(--space-2) 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-fast);
+  z-index: 1000;
+}
+
+.userDropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.dropdownItem:hover {
+  background-color: var(--color-bg);
+}
+
+.dropdownItem .material-symbols-outlined {
+  font-size: 20px;
+  color: var(--color-text-secondary);
+}
+
+.dropdownDivider {
+  height: 1px;
+  margin: var(--space-2) 0;
+  background-color: var(--color-border);
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+  font-weight: 500;
+  text-align: left;
+  transition: background-color var(--transition-fast);
+}
+
+.logoutBtn:hover {
+  background-color: var(--color-danger-bg);
+}
+
+.logoutBtn svg {
+  color: var(--color-danger);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+    row-gap: 10px;
+  }
+
+  .logo {
+    font-size: var(--font-size-lg);
+  }
+
+  /* Search bar drops to a full-width second row */
+  .searchSlot {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .createLabel {
+    display: none;
+  }
+
+  .createBtn {
+    padding: 8px;
+  }
+
+  .userMenuToggle {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .userName {
+    max-width: 80px;
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 360px) {
+  .userName {
+    display: none;
+  }
+
+  .userMenuToggle {
+    padding: 8px;
+    gap: 4px;
+  }
+
+  .chevronIcon {
+    display: none;
+  }
+}

@@ -1,0 +1,2 @@
+ALTER TABLE Evento 
+ALTER COLUMN Localizacao TYPE VARCHAR(500);

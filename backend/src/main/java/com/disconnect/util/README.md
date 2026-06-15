@@ -1,0 +1,1 @@
+Coisas que usamos em vários lugares mas que não têm uma "casa" fixa: formatadores de data, validadores de CPF, essas coisas. Então se precisarem criar uma função que faz qualquer coisa, mas não sabe onde encaixar ela, joga aqui, é tipo uma caixa de ferramenta (uma lib do projetot)

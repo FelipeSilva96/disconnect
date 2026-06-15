@@ -1,0 +1,193 @@
+/* Mobile-first: map on top, cards below (Airbnb mobile) */
+.split {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+}
+
+.mapPane {
+  height: 40vh;
+  min-height: 260px;
+  padding: var(--space-3);
+}
+
+.listPane {
+  flex: 1;
+  padding: var(--space-5);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  margin-bottom: var(--space-6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+.loading,
+.empty {
+  color: var(--color-text-muted);
+  text-align: center;
+  padding: var(--space-12);
+}
+
+/* Skeleton placeholders while events load */
+.skeletonCard {
+  height: 140px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    var(--color-bg) 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Desktop: cards left, sticky map right */
+@media (min-width: 768px) {
+  .split {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .listPane {
+    flex: 1;
+    min-width: 0;
+    padding: var(--space-6);
+  }
+
+  .mapPane {
+    width: 42%;
+    max-width: 720px;
+    position: sticky;
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    padding: var(--space-4);
+    padding-left: 0;
+  }
+}
+
+.aiSection {
+  margin-bottom: var(--space-8);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #e9ecef;
+}
+
+.aiSectionHeader {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.aiIcon {
+  font-size: 28px;
+  color: var(--color-primary);
+}
+
+.aiTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  margin: 0 0 var(--space-1);
+}
+
+.aiSubtitle {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.aiMessage {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.aiMessageBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.aiGenerateButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.aiGenerateButton:hover {
+  background: var(--color-primary-hover);
+}
+
+.aiGenerateButton .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.recommendationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-5);
+}
+
+.recommendationCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.recommendationInfo {
+  padding: var(--space-4);
+  border: 1px solid #e9ecef;
+  border-radius: var(--radius-md);
+  background: #f8f9fa;
+}
+
+.recommendationInfo strong {
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.recommendationInfo p {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
+.recommendationInfo ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.recommendationInfo li + li {
+  margin-top: 4px;
+}

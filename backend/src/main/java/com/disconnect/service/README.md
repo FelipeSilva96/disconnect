@@ -1,0 +1,1 @@
+Aqui fica toda a lógica de negócio, cálculos e validações ficam aqui. A gente não coloca nenhum tipo de lógica no front por exemplo
