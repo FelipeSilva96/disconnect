@@ -501,15 +501,3 @@ Alguns pontos que podem ser evoluídos futuramente:
 - publicar uma versão em produção.
 
 ---
-
-## 👨‍💻 Autor
-
-Desenvolvido por **Felipe Silva**.
-
-GitHub: [@FelipeSilva96](https://github.com/FelipeSilva96)
-
----
-
-## 📄 Licença
-
-Este projeto ainda não possui uma licença definida.
